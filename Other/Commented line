@@ -1,0 +1,19 @@
+#Deck Card
+    #permet de voir toutes les cartes de chaques joueur dans l'ordre
+    Player_file.Player.show_hand(Init_game.liste_player[j])
+
+    #Permet de voir le stack de chaque joueur
+    for jj in range(global_variable.nb_player):
+        Player_file.Player.stack_joueur(Init_game.liste_player[jj], jj)
+
+    #Permet de voir les mains des joueurs
+    Player_file.Player.show_hand(Init_game.liste_player[j], j)
+
+def creation_client():
+    # Initialisation code game
+    from Other.global_variable import liste_player
+    # createplayer
+    for i in range(global_variable.nb_player):
+        liste_player.append(Player.__init__(Player, i, global_variable.starting_stack))
+        os.system(
+            "gnome-terminal -e 'bash -c \"cd /home/apb/PycharmProjects/Poker_project/comunication && python client_game.py; exec bash;\"'")
